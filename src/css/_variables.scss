@@ -1,0 +1,79 @@
+// Colors
+$light-theme: (
+  primary-bg: #fcfcfc,
+  primary-fg: #212529,
+  accent-color: #aa2431,
+  link-color: #aa2431,
+  link-light: fade-out(#aa2431, 0.75),
+  border-color: fade-out(#fcfcfc, 0.85),
+) !default;
+
+$dark-theme: (
+  primary-bg: #212529,
+  primary-fg: #fcfcfc,
+  accent-color: #aa2431,
+  link-color: lighten(#aa2431, 40%),
+  link-light: fade-out(lighten(#aa2431, 40%), 0.35),
+  border-color: fade-out(#fcfcfc, 0.85),
+) !default;
+
+// Fonts (native stack)
+$font-family-sans-serif:
+  // Safari for OS X and iOS (San Francisco)
+  -apple-system,
+  // Chrome < 56 for OS X (San Francisco)
+  BlinkMacSystemFont,
+  // Windows
+  "Segoe UI",
+  // Android
+  "Roboto",
+  // Basic web fallback
+  "Helvetica Neue", Arial, sans-serif,
+  // Emoji fonts
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$font-family-monospace:
+  // Apple
+  SFMono-Regular, Menlo, 
+  // Windows
+  Monaco, Consolas,
+  // Android
+  "Roboto Mono",
+  // Basic web fallbakc
+  "Liberation Mono", "Courier New", monospace,
+  // Emoji fonts
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$font-family: $font-family-sans-serif !default;
+$font-family-headings: $font-family-sans-serif !default;
+
+// Font size
+$font-size-base: 1rem !default;
+$font-size-md: $font-size-base !default;
+$font-size-lg: $font-size-base * 2 !default;
+$font-size-xl: $font-size-base * 4 !default;
+$line-height-heading: 1.15;
+$line-height-base: 1.5;
+
+// Font-weights
+$bold: 700;
+
+// Breakpoints
+$mobile-max-width: 575px;
+$desktop-min-width: 576px;
+
+// Line-spacing / spacing between elements
+$spacing-base: 0.75rem !default;
+$spacing-sm: $spacing-base / 3 !default;
+$spacing-md: $spacing-base !default;
+$spacing-lg: $spacing-base * 3 !default;
+$spacing-xl: $spacing-base * 6 !default;
+
+// Padding within elements
+$padding-base: 1rem !default;
+$padding-md: $padding-base !default;
+$padding-lg: $padding-base * 3 !default;
+$padding-xl: $padding-base * 6 !default;
+
+// Box styling
+$border-radius-base: 0.25rem;

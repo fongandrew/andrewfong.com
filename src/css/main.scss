@@ -1,0 +1,51 @@
+@import "_variables.scss";
+@import "_normalize.scss";
+@import "_theming.scss";
+@import "_base-styling.scss";
+
+// For the main page (if we have more than one page, can refactor out)
+#home {
+
+    @media only screen and (min-width: $desktop-min-width) {
+        // Vertical centering -- so much nicer than in the bad old days
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+
+        h1 {
+            // No margin-top because of vertical centering needed. Nudge up
+            // a little to make it feel right 
+            margin-top: -$font-size-xl / 2; 
+        }
+    }
+
+    main {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: $font-size-xl;
+    }
+
+    nav a {
+        &::before {
+            content: '⯈';
+            margin-right: $spacing-sm;
+            display: inline-block;
+            opacity: 0.2;
+        }
+
+        display: block;
+        margin-top: $spacing-md;
+        @media only screen and (min-width: $desktop-min-width) {
+            display: inline-block;
+            margin-top: 0;
+
+            & + a {
+                margin-left: $spacing-md;
+            }
+        }
+    }
+}
