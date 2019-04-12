@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Personal home page",
   "scripts": {
-    "watch": "parcel src/index.html",
-    "build": "parcel build src/index.html --out-dir dist"
+    "watch": "parcel src/*",
+    "build": "parcel build src/* --out-dir dist"
   },
   "repository": {
     "type": "git",
