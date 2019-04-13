@@ -5,7 +5,11 @@
 
 // For the main page (if we have more than one page, can refactor out)
 #home {
-
+    min-height: 100vh;
+    @include themed() {
+        background: t('home-bg'); 
+    }
+   
     @media only screen and (min-width: $desktop-min-width) {
         // Vertical centering -- so much nicer than in the bad old days
         min-height: 100vh;

@@ -6,6 +6,11 @@ $light-theme: (
   link-color: #aa2431,
   link-light: fade-out(#aa2431, 0.75),
   border-color: fade-out(#fcfcfc, 0.85),
+  home-bg: (
+    linear-gradient(102deg, rgba(#ffffff, 0), rgba(#fc0, 0.05)),
+    linear-gradient(12deg, rgba(#212529, 0.05), rgba(#ffffff, 0)),
+    #fcfcfc
+  ),
 ) !default;
 
 $dark-theme: (
@@ -15,6 +20,11 @@ $dark-theme: (
   link-color: lighten(#aa2431, 40%),
   link-light: fade-out(lighten(#aa2431, 40%), 0.35),
   border-color: fade-out(#fcfcfc, 0.85),
+  home-bg: (
+    linear-gradient(102deg, rgba(#ffffff, 0), rgba(#fc0, 0.05)),
+    linear-gradient(12deg, rgba(#fcfcfc, 0.05), rgba(#ffffff, 0)),
+    #212529
+  ),
 ) !default;
 
 // Fonts (native stack)
