@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Personal home page",
   "scripts": {
-    "watch": "parcel src/*",
-    "build": "parcel build src/* --out-dir dist"
+    "watch": "parcel src/*.html src/*.xml src/*.json src/apple-touch-icon.png src/android-*.png src/favicon* src/manifest.json src/mstile* src/safari-pinned-tab.svg",
+    "build": "parcel build src/*.html src/*.xml src/*.json src/apple-touch-icon.png src/android-*.png src/favicon* src/manifest.json src/mstile* src/safari-pinned-tab.svg --out-dir dist"
   },
   "repository": {
     "type": "git",
