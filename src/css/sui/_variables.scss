@@ -1,20 +1,5 @@
-@charset 'utf-8';
-
-@import "_sanitize.scss";
 @import "utils/_contrast.scss";
 @import "utils/_encode.scss";
-@import "_shading.scss";
-@import "_base.scss";
-@import "_typography.scss";
-@import "_buttons.scss";
-@import "_checkboxes";
-@import "_color-pickers.scss";
-@import "_form.scss";
-@import "_meter.scss";
-@import "_progress.scss";
-@import "_radio-buttons.scss";
-@import "_sliders.scss";
-@import "_tables.scss";
 
 // Theme colors
 $light-theme: (
@@ -174,7 +159,7 @@ $active-theme: $light-theme;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        @include apply-theme($dark-theme);
-    }
+  :root {
+      @include apply-theme($dark-theme);
+  }
 }
