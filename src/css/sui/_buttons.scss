@@ -9,6 +9,7 @@ button {
 
     display: inline-block;
     padding: var(--padding-input-v) var(--padding-input-h);
+    margin-bottom: var(--spacing-sm);
     min-height: var(--input-height-md);
     
     text-align: center;
