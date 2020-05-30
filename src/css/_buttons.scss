@@ -1,0 +1,74 @@
+input[type=submit],
+input[type=reset],
+input[type=button],
+button {
+    background-color: var(--button-secondary-bg);
+    color: var(--button-secondary-fg);
+    border: 1px solid var(--button-secondary-border);
+    border-radius: var(--border-radius);
+
+    display: inline-block;
+    padding: var(--padding-input-v) var(--padding-input-h);
+    min-height: var(--input-height-md);
+    
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+
+    // Small because also bold
+    font-weight: bold;
+    font-size: var(--font-size-sm);
+
+    &:disabled {
+        box-shadow: none;
+        background: var(--button-disabled-bg);
+        border-color: var(--button-disabled-border);
+        color: var(--button-disabled-fg);
+    }
+
+    &:not(:disabled) {
+        cursor: pointer;;
+    }
+
+    &:active:not(:disabled) {
+        position: relative;
+        top: 1px;
+        box-shadow: none;
+    }
+
+    &:hover:not(:disabled) {
+        background: ltr-lighten(0.025), var(--button-secondary-hover-bg);
+        border-color: var(--button-secondary-hover-border);
+        color: var(--button-secondary-hover-fg);
+        box-shadow: $elevation-shadow;
+    }
+
+    &:focus {
+        @include focus-ring();
+    }
+}
+
+// Primary buttons (type submit)
+input[type=submit], button:not([type]), button[type=submit] {
+    background: ltr-lighten(), var(--button-primary-bg);
+    color: var(--button-primary-fg);
+    border-color: var(--button-primary-border);
+    box-shadow: $elevation-shadow;
+
+    &:disabled {
+        background: var(--button-disabled-bg);
+        border-color: var(--button-disabled-border);
+        color: var(--button-disabled-fg);
+    }
+
+    &:hover:not(:disabled) {
+        background: ltr-lighten(), var(--button-primary-hover-bg);
+        border-color: var(--button-primary-hover-border);
+        color: var(--button-primary-hover-fg);
+    }
+
+    &:focus {
+        @include focus-ring();
+    }
+}

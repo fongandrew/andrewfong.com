@@ -1,0 +1,58 @@
+$elevation-shadow: 1px 1px 1.5px rgba(0, 0, 0, 0.12);
+$elevation-right-shadow: 1px 0 1.5px rgba(0, 0, 0, 0.16);
+$default-focus-shadow-size: 3.5px;
+$inset-shadow: 1px 1px 2px rgba(0, 0, 0, 0.12) inset;
+
+// Used in lieu of focus-ring if not feasible
+@mixin focus-outline() {
+    outline: $default-focus-shadow-size solid var(--focus-shadow);
+}
+
+@function focus-shadow($size: null) {
+    // Use @if because we get null sizes from calling function sbelow
+    @if ($size) {
+        @return 0 0 0 $size var(--focus-shadow);
+    } @else {
+        @return 0 0 0 $default-focus-shadow-size var(--focus-shadow);
+    }
+}
+
+@mixin focus-ring-shadow($focus-shadow-size: null) {
+    box-shadow: focus-shadow($focus-shadow-size);
+    outline: none;
+
+    &:invalid,
+    &[aria-invalid] {
+        border-color: var(--error-color);
+        box-shadow: 0 0 0 $focus-shadow-size var(--error-shadow);
+    }
+}
+
+@mixin focus-ring($focus-shadow-size: null) {
+    border: 1px solid var(--focus-color);
+    @include focus-ring-shadow($focus-shadow-size);
+}
+
+@mixin focus-ring-with-inset($focus-shadow-size: null) {
+    @include focus-ring($focus-shadow-size);
+    box-shadow: $inset-shadow, focus-shadow($focus-shadow-size);
+
+    &:invalid,
+    &[aria-invalid] {
+        box-shadow: 0 0 0 $focus-shadow-size var(--error-shadow);
+    }
+}
+
+@function ltr-lighten($opacity: 0.16) {
+    @return linear-gradient(
+        120deg,
+        rgba(0, 0, 0, $opacity) 0%,
+        rgba(0, 0, 0, 0) 75%,
+    );
+}
+
+// For progress + meter
+@mixin color-bar($color) {
+    background: ltr-lighten(), $color;
+    box-shadow: 1px 0 1px rgba(0, 0, 0, 0.12);
+}

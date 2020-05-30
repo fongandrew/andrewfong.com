@@ -1,0 +1,38 @@
+table {
+    border-top: 1px solid var(--border-color);
+}
+
+caption {
+    padding: var(--padding-input-v) 0;
+    font-style: italic;
+}
+  
+thead th {
+    border: 0;
+    border-bottom: 2px solid var(--border-color);
+    text-align: left;
+}
+  
+th,
+td {
+    padding: var(--padding-input-v) var(--padding-input-h);
+    text-align: left;
+    vertical-align: inherit;
+    border: 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+tbody tr:last-child td {
+    border-bottom: 2px solid var(--border-color);
+}
+  
+tfoot td, tfoot th {
+    border: 0;
+    text-align: left;
+    color: var(--secondary-fg);
+}
+  
+// tfoot td, tfoot th {
+    
+//     border-top: 2px solid var(--border-color);
+// }

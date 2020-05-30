@@ -1,0 +1,79 @@
+// Only height because thumb is round
+$track-height: 12px;
+
+@mixin track() {
+    width: 100%;
+    height: $track-height;
+    background: var(--slider-track-color);
+    box-shadow: $inset-shadow;
+    border-radius: $track-height;
+    border: 0;
+    cursor: pointer;
+
+    // To keep shadow in track from spilling out
+    overflow: hidden;
+}
+
+@mixin thumb() {
+    -webkit-appearance: none;
+    border: 1px solid var(--slider-thumb-color);
+    border-radius: 100%;
+    box-shadow: $elevation-right-shadow;
+    background: ltr-lighten(), var(--slider-thumb-color);
+    cursor: pointer;
+    
+    // Use of track is intentional here, thumb should not extend beyond
+    // edge of track (we could but it require some extra finagling since
+    // thumb doesn't normally extend beyond left/right of track)
+    height: $track-height;
+    width: $track-height;
+}
+
+@mixin thumb-focus() {
+    @include focus-ring(5px);
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    height: var(--input-height-md);
+    background: transparent;
+
+    // Can't use comma-separated selectors here because browsers will
+    // drop the entire thing if they don't understand one part of
+    // the selector
+
+    &::-moz-range-track {
+        @include track();
+    }
+    &::-webkit-slider-runnable-track {
+        @include track();
+    }
+
+    &::-moz-range-thumb {
+        @include thumb();
+    }
+    &::-webkit-slider-thumb {
+        @include thumb();
+    }
+
+    &:focus {
+        outline: none;
+
+        // Overflow visible so focus ring is visible
+        &::-webkit-slider-runnable-track {
+            overflow: visible;
+        }
+        &::-moz-range-track {
+            overflow: visible;
+        }
+
+        &::-moz-range-thumb {
+            @include thumb-focus();
+        }
+        &::-webkit-slider-thumb {
+            @include thumb-focus();
+        }
+    }
+}

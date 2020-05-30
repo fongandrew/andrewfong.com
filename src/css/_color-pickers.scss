@@ -1,0 +1,45 @@
+// Size of color picker relative to font
+$color-picker-height: 1.5em;
+
+input[type="color"] {
+    background: transparent;
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: $elevation-shadow;
+    display: inline-block;
+    padding: 0;
+    overflow: hidden;
+    height: $color-picker-height;
+    width: $color-picker-height;
+    vertical-align: middle;
+
+    &:focus {
+        @include focus-ring();
+    }
+
+    // Can't use comma-separated selectors here because browsers will
+    // drop the entire thing if they don't understand one part of
+    // the selector
+
+    &::-webkit-color-swatch-wrapper {
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    &::-webkit-color-swatch {
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    &::-moz-color-swatch {
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    & + label, label + & {
+        margin-left: var(--spacing-sm);
+    }
+}

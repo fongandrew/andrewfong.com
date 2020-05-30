@@ -1,0 +1,73 @@
+// Se https://css-tricks.com/html5-progress-element/ for more details
+
+$meter-height: 16px;
+
+@mixin meter-bar {
+    height: $meter-height;
+    border: 0;
+    background: transparent;
+    box-shadow: $inset-shadow;
+}
+
+@mixin meter-optimum {
+    @include color-bar(var(--meter-optimum-fg));
+}
+
+@mixin meter-warning {
+    @include color-bar(var(--meter-warning-fg));
+}
+
+@mixin meter-danger {
+    @include color-bar(var(--meter-danger-fg));
+}
+
+meter {
+    -moz-appearance: none;
+	appearance: none;
+	border: none;
+    width: 100%;
+    height: $meter-height;
+    background: var(--meter-bg);
+    box-shadow: $inset-shadow;
+    border-radius: $meter-height; // Pill
+    overflow: hidden; // Clip meter if it sticks too far out
+	    
+    // Can't use comma-separated selectors here because browsers will
+    // drop the entire thing if they don't understand one part of
+    // the selector
+
+    &::-webkit-meter-bar {
+        @include meter-bar();
+    }
+
+    &::-webkit-meter-optimum-value {
+        @include meter-optimum();
+    }
+    
+    &::-webkit-meter-suboptimum-value {
+        @include meter-warning();
+    }
+
+    &::-webkit-meter-even-less-good-value {
+        @include meter-danger();
+    }
+
+    &::-moz-meter-bar {
+        @include meter-bar();
+    }
+    
+    &:-moz-meter-optimum::-moz-meter-bar {
+        -moz-appearance: none;
+        @include meter-optimum();
+    }
+
+    &:-moz-meter-sub-optimum::-moz-meter-bar {
+        -moz-appearance: none;
+        @include meter-warning();
+    }
+
+    &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+        -moz-appearance: none;
+        @include meter-danger();
+    }
+}

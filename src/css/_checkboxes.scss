@@ -1,0 +1,53 @@
+// Checkbox must be followed by label
+// See https://css-tricks.com/the-checkbox-hack/
+
+// Size of checkbox relative to font
+$checkbox-size: 0.85em;
+
+input[type="checkbox"] {
+    // Hide / remove from flow so we can add our own styling
+    opacity: 0;
+    position: absolute;
+
+    padding: 0;
+    display: inline;
+
+    & + label {
+        cursor: pointer;
+
+        &::before {
+            content: ' ';
+            display: inline-block;
+            overflow: hidden;
+            height: $checkbox-size;
+            width: $checkbox-size;
+            margin-right: var(--spacing-sm);
+            background-color: var(--checkbox-unchecked-bg);
+            border-radius: var(--border-radius);
+            box-shadow: $inset-shadow;
+        }
+    }
+
+    &:checked + label::before {
+        background-color: var(--checkbox-checked-bg);
+        background-image: ltr-lighten(), var(--checkbox-checked-image);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 80% auto;
+        box-shadow: $elevation-shadow;
+    }
+
+    &:disabled + label {
+        color: var(--secondary-fg);
+
+        &::before {
+            background-color: var(--checkbox-disabled-bg);
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+    }
+
+    &:focus + label:before {
+        @include focus-ring-with-inset();
+    }
+}

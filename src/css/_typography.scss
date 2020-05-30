@@ -1,0 +1,147 @@
+html,
+body {
+	// Native stack for fonts
+	font-family: 
+    // Safari for OS X and iOS (San Francisco)
+    -apple-system,
+    // Chrome < 56 for OS X (San Francisco)
+    BlinkMacSystemFont, // Windows 'Segoe UI',
+    // Android
+    'Roboto', // Basic web fallback 'Helvetica Neue', Arial, sans-serif,
+    // Emoji fonts
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+	line-height: 1.5;
+	color: var(--primary-fg);
+	font-size: var(--font-size-md);
+}
+
+p {
+  margin-top: 0;
+	margin-bottom: 0;
+}
+
+* + p {
+	margin-top: var(--spacing-md);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: inherit;
+	font-family: inherit;
+	line-height: 1.2;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: var(--spacing-lg);
+}
+
+h4,
+h5,
+h6 {
+  margin-top: var(--spacing-md);
+}
+
+small {
+	color: var(--secondary-fg);
+	vertical-align: bottom;
+}
+
+// Monospaced font families
+pre,
+code {
+	font-family:
+    // Apple
+    SFMono-Regular, Menlo,
+    // Windows
+    Monaco, Consolas,
+    // Android
+    'Roboto Mono',
+    // Basic web fallback
+    'Liberation Mono', 'Courier New', monospace,
+    // Emoji fonts
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  background: var(--secondary-bg);
+  border-radius: var(--border-radius);
+}
+
+pre {
+	display: block;
+	padding: var(--padding-base);
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+code {
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+a {
+	color: var(--link-color);
+	text-decoration: underline dotted var(--link-light);
+
+	&:hover,
+	&:focus {
+		text-decoration: underline solid var(--link-color);
+	}
+
+	&:focus {
+		@include focus-outline();
+	}
+
+	&:active {
+		position: relative;
+		top: 1px;
+	}
+}
+
+ul,
+ol {
+  	padding-left: var(--padding-base);
+	vertical-align: baseline;
+}
+
+blockquote {
+  	margin-left: var(--padding-base);
+	border-left: 2px solid var(--border-color);
+	padding-left: var(--padding-base);
+}
+
+figcaption {
+  font-size:var(--font-size-sm);
+  font-style: italic;
+}
+
+u {
+	text-decoration: underline;
+}
+
+s {
+	text-decoration: line-through;
+}
+
+sup {
+	font-size: var(--font-size-sm);
+	vertical-align: super;
+}
+
+sub {
+	font-size: var(--font-size-sm);
+	vertical-align: sub;
+}
+
+mark {
+	background: var(--highlight-bg);
+}

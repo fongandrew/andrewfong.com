@@ -1,0 +1,70 @@
+body {
+    background: var(--primary-bg);
+    background-attachment: fixed;
+    padding: var(--padding-base);
+}
+
+* {
+    box-sizing: border-box;
+
+    // No margin bottom by default (see owl selector below)
+    margin-bottom: 0;
+}
+
+// Lobotomized owl selector = small bit of spacing between elements by
+// default. Spacing is always a function of the bottom selement.
+* + * {
+	margin-top: var(--spacing-sm);
+}
+
+// Annoying Mozilla fix
+::-moz-focus-outer {
+    border-style: none;
+}
+
+main,
+section,
+article {
+    max-width: var(--max-content-width);
+}
+
+footer {
+    margin-top: var(--spacing-md);
+    border-top: 2px solid var(--border-color);
+    padding-top: var(--spacing-md);
+}
+
+hr {
+    border: 0;
+    border-top: 2px solid var(--border-color);
+    display: block;
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    width: 100%;
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+audio,
+embed,
+iframe,
+img,
+video {
+    border: 0;
+    border-radius: var(--border-radius);
+
+    &:focus {
+        @include focus-ring-shadow();
+    }
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: baseline;
+}
+
+a img {
+    box-shadow: $elevation-shadow;
+}

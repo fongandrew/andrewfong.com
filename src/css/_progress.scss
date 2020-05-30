@@ -1,0 +1,69 @@
+// Se https://css-tricks.com/html5-progress-element/ for more details
+
+$progress-height: 16px;
+
+@mixin progress-bar {
+    background-color: var(--progress-bg);
+    box-shadow: $inset-shadow;
+    border-radius: $progress-height; // Pill
+    overflow: hidden; // Clip progress bar if it sticks too far out
+}
+
+@mixin progress-value {
+    @include color-bar(var(--progress-fg));
+}
+
+@keyframes progress-shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+}
+
+progress {
+	appearance: none;
+	border: none;
+    width: 100%;
+    height: $progress-height;
+	
+    @include progress-bar();
+
+    // Can't use comma-separated selectors here because browsers will
+    // drop the entire thing if they don't understand one part of
+    // the selector
+
+    &::-webkit-progress-bar {
+        // Already handled by background of element itself
+        background: transparent;
+    }
+
+    &::-webkit-progress-value {
+        @include progress-value();
+    }
+
+    &::-moz-progress-bar {
+        @include progress-value();
+    }
+
+    // Loading animation
+    &:not([value]) {
+        background: linear-gradient(
+            to right,
+            var(--progress-bg) 4%,
+            var(--progress-shimmer-fg) 25%,
+            var(--progress-bg) 36%
+        );
+        background-size: 1000px 100%;
+        animation: progress-shimmer 4s infinite linear;
+
+        &::-webkit-progress-value {
+            background-color: transparent;
+        }
+
+        &::-moz-progress-bar {
+            background-color: transparent;
+        }
+    }
+}

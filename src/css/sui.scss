@@ -1,0 +1,107 @@
+@charset 'utf-8';
+
+@import "_sanitize.scss";
+@import "_tools.scss";
+@import "_base.scss";
+@import "_typography.scss";
+@import "_buttons.scss";
+@import "_checkboxes";
+@import "_color-pickers.scss";
+@import "_form.scss";
+@import "_meter.scss";
+@import "_progress.scss";
+@import "_radio-buttons.scss";
+@import "_sliders.scss";
+@import "_tables.scss";
+
+
+// CSS variables (light mode)
+:root {
+    // Colors
+    --primary-bg: #fcfcfc;
+    --secondary-bg: #e3e3e3;
+    --primary-fg: #212529;
+    --secondary-fg: #{rgba(#212529, 0.8)}; // #4d5053 (perceived)
+
+    --input-bg: white;
+    --input-disabled-bg: #e3e3e3;
+
+    --button-primary-bg: #631040;
+    --button-primary-fg: white;
+    --button-primary-border: #631025;
+    --button-primary-hover-bg: #{scale-color(#631040, $saturation: 100%)};
+    --button-primary-hover-fg: white;
+    --button-primary-hover-border: #631040;
+
+    --button-secondary-bg: #{rgba(white, 0.5)};
+    --button-secondary-fg:#212529;
+    --button-secondary-border: #{rgba(#212529, 0.25)};
+    --button-secondary-hover-bg: #{rgba(#212529, 0.025)};
+    --button-secondary-hover-fg:#212529;
+    --button-secondary-hover-border: #{rgba(#212529, 0.35)};
+
+    --button-disabled-bg: #e3e3e3;
+    --button-disabled-fg: #212529;
+    --button-disabled-border: #e3e3e3;
+
+    --checkbox-unchecked-bg: #e3e3e3;
+    --checkbox-checked-bg: #aa2431;
+    --checkbox-checked-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40 "><polyline points="5 20 15 30 35 10" fill="none" stroke="white" stroke-width="4px" /></svg>');
+    --checkbox-disabled-bg: #{rgba(#212529, 0.35)};
+
+    --link-color: #aa2431;
+    --link-light: #{rgba(#aa2431, 0.75)};
+
+    --progress-fg: #5da271;
+    --progress-bg: #e3e3e3;
+    --progress-shimmer-fg: #{scale-color(#e3e3e3, $lightness: -10%)};
+
+    --meter-bg: #e3e3e3;
+    --meter-optimum-fg: #5da271;
+    --meter-warning-fg: #ffcc00;
+    --meter-danger-fg: #c84630;
+
+    --radio-unchecked-bg: #e3e3e3;
+    --radio-checked-bg: #aa2431;
+    --radio-checked-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40 "><circle cx="20" cy="20" r="15" fill="white" /></svg>');
+    --radio-disabled-bg: #{rgba(#212529, 0.35)};
+
+    --select-caret-bg: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 25"><polyline points="2 2 20 20 38 2" fill="none" stroke="%23212529" stroke-width="4px" /></svg>');
+
+    --slider-thumb-color: #aa2431;
+    --slider-track-color: #e3e3e3;
+
+    --focus-color: #2b90d9;
+    --focus-shadow: #{rgba(#2b90d9, 0.25)};
+
+    --error-color: #c84630;
+    --error-shadow: #{rgba(#c84630, 0.25)};
+
+    --highlight-bg: #ffcc00;
+    --border-color: #{rgba(#212529, 0.25)}; // #c5c6c7 (perceived)
+
+    // Font sizes
+    --font-size-sm: 0.85rem;
+    --font-size-md: 1rem;
+    --input-height-md: 2.375rem;
+
+    // Line-spacing / spacing between elements
+    --spacing-sm: 0.25rem;
+    --spacing-md: 0.75rem;
+    --spacing-lg: 2.25rem;
+    --spacing-xl: 4.5rem;
+
+    // Padding within elements
+    --padding-base: 1rem;
+    --padding-input-v: 0.33rem;
+    --padding-input-h: 0.66rem;
+
+    // Controls max-size of main, section, articles, etc.
+    --max-content-width: 1024px;
+
+    // Box styling
+    --border-radius: 4px;
+
+    // Default animation duration
+    --animation-duration: 4s;
+}

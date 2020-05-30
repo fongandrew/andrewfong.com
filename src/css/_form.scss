@@ -1,0 +1,113 @@
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input:not([type]),
+select,
+textarea {
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: $inset-shadow;
+    color: var(--primary-fg);
+    display: block;
+    font-family: inherit;
+    width: 100%;
+    margin-top: var(--spacing-sm);
+    padding: var(--padding-input-v) var(--padding-input-h);
+    height: var(--input-height-md);
+
+    // Default focus styling
+    &:focus {
+        @include focus-ring-with-inset;
+    }
+
+    &:invalid,
+    &[aria-invalid] {
+        border-color: var(--error-color);
+    }
+
+    &[disabled],
+    &[aria-disabled] {
+        background: var(--input-disabled-bg);
+        cursor: not-allowed;
+    }
+
+    &[readonly],
+    &[aria-readonly] {
+        background: var(--secondary);
+    }
+}
+
+textarea {
+    height: auto;
+}
+
+select { 
+    cursor: pointer;
+}
+
+select:not([multiple]) { 
+    appearance: none;
+    -webkit-appearance: none;
+
+    // Caret / chevron image
+    background-image: var(--select-caret-bg);
+    background-color: var(--input-bg);
+    background-repeat: no-repeat, repeat;
+
+    // 2px nudge for alignment purposes
+    background-position: right calc(var(--padding-input-h) + 2px) top 50%, 0 0;
+    
+	background-size: .65em auto, 100%;
+}
+
+input[type="file"]:focus {
+    outline-color: var(--focus-color);
+    outline-width: thick;
+}
+
+select {
+    vertical-align: sub;
+}
+
+select:not([size]):not([multiple]) {
+    height: calc(2.25rem + 2px);
+}
+
+select[multiple] {
+    height: auto;
+}
+
+label {
+    display: inline-block;
+}
+
+fieldset {
+    border: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: var(--padding-base);
+    padding: 0;
+}
+
+legend {
+    border-bottom: 1px solid var(--border-color);
+    display: block;
+    font-weight: bold;
+    width: 100%;
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+}

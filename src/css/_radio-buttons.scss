@@ -1,0 +1,52 @@
+// Radio buttons must be followed by label (same as checkbox)
+
+// Size of radio butotn relative to font
+$radio-size: 0.85em;
+
+input[type="radio"] {
+    // Hide / remove from flow so we can add our own styling
+    opacity: 0;
+    position: absolute;
+
+    padding: 0;
+    display: inline;
+
+    & + label {
+        cursor: pointer;
+
+        &::before {
+            content: ' ';
+            display: inline-block;
+            overflow: hidden;
+            height: $radio-size;
+            width: $radio-size;
+            margin-right: var(--spacing-sm);
+            background-color: var(--radio-unchecked-bg);
+            border-radius: $radio-size;
+            box-shadow: $inset-shadow;
+        }
+    }
+
+    &:checked + label::before {
+        background-color: var(--radio-checked-bg);
+        background-image: ltr-lighten(), var(--radio-checked-image);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 50% auto;
+        box-shadow: $elevation-shadow;
+    }
+
+    &:disabled + label {
+        color: var(--secondary-fg);
+
+        &::before {
+            background-color: var(--checkbox-disabled-bg);
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+    }
+
+    &:focus + label:before {
+        @include focus-ring();
+    }
+}
