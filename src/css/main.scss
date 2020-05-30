@@ -1,13 +1,36 @@
-@import "_variables.scss";
-@import "_normalize.scss";
-@import "_theming.scss";
-@import "_base-styling.scss";
+@import "sui.scss";
+
+// Breakpoints
+$mobile-max-width: 575px;
+$desktop-min-width: 576px;
+
+// Jumbo-title font size
+$font-size-h1: 4rem;
 
 // For the main page (if we have more than one page, can refactor out)
 #home {
     min-height: 100vh;
-    @include themed() {
-        background: t('home-bg'); 
+    background:
+        linear-gradient(102deg, rgba(#ffffff, 0), rgba(#fc0, 0.05)),
+        linear-gradient(12deg, rgba(#212529, 0.05), rgba(#ffffff, 0)),
+        #fcfcfc;
+
+    @media (prefers-color-scheme: dark) {
+        background:
+            linear-gradient(102deg, rgba(#ffffff, 0), rgba(#fc0, 0.05)),
+            linear-gradient(12deg, rgba(#fcfcfc, 0.05), rgba(#ffffff, 0)),
+            #212529;
+    }
+
+    h1 {
+        font-size: $font-size-h1;
+        font-weight: bold;
+    }
+
+    main {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
     }
    
     @media only screen and (min-width: $desktop-min-width) {
@@ -19,36 +42,30 @@
         h1 {
             // No margin-top because of vertical centering needed. Nudge up
             // a little to make it feel right 
-            margin-top: -$font-size-xl / 2; 
+            margin-top: -$font-size-h1 / 2; 
         }
-    }
 
-    main {
-        width: 100%;
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-
-    h1 {
-        font-size: $font-size-xl;
+        main {
+            padding: 100px 50px;
+        }
     }
 
     nav a {
         &::before {
             content: '\27a4'; // ⮞
-            margin-right: $spacing-sm;
+            margin-right: var(--spacing-sm);
             display: inline-block;
             opacity: 0.2;
         }
 
         display: block;
-        margin-top: $spacing-md;
+        margin-top: var(--spacing-md);
         @media only screen and (min-width: $desktop-min-width) {
             display: inline-block;
             margin-top: 0;
 
             & + a {
-                margin-left: $spacing-md;
+                margin-left: var(--spacing-md);
             }
         }
     }
