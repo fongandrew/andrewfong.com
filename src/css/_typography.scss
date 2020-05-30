@@ -5,7 +5,9 @@ body {
     // Safari for OS X and iOS (San Francisco)
     -apple-system,
     // Chrome < 56 for OS X (San Francisco)
-    BlinkMacSystemFont, // Windows 'Segoe UI',
+	BlinkMacSystemFont,
+	// Windows
+	'Segoe UI',
     // Android
     'Roboto', // Basic web fallback 'Helvetica Neue', Arial, sans-serif,
     // Emoji fonts
@@ -17,7 +19,7 @@ body {
 }
 
 p {
-  margin-top: 0;
+  	margin-top: 0;
 	margin-bottom: 0;
 }
 
@@ -33,21 +35,25 @@ h5,
 h6 {
 	color: inherit;
 	font-family: inherit;
-	line-height: 1.2;
-  font-weight: 500;
-  margin-bottom: 0;
+	line-height: 1.15;
+	font-weight: 500;
+	margin-bottom: 0;
+}
+
+h1 {
+	font-weight: bold;
 }
 
 h1,
 h2,
 h3 {
-  margin-top: var(--spacing-lg);
+  	margin-top: var(--spacing-lg);
 }
 
 h4,
 h5,
 h6 {
-  margin-top: var(--spacing-md);
+  	margin-top: var(--spacing-md);
 }
 
 small {
@@ -59,18 +65,18 @@ small {
 pre,
 code {
 	font-family:
-    // Apple
-    SFMono-Regular, Menlo,
-    // Windows
-    Monaco, Consolas,
-    // Android
-    'Roboto Mono',
-    // Basic web fallback
-    'Liberation Mono', 'Courier New', monospace,
-    // Emoji fonts
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  background: var(--secondary-bg);
-  border-radius: var(--border-radius);
+		// Apple
+		SFMono-Regular, Menlo,
+		// Windows
+		Monaco, Consolas,
+		// Android
+		'Roboto Mono',
+		// Basic web fallback
+		'Liberation Mono', 'Courier New', monospace,
+		// Emoji fonts
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+	background: var(--secondary-bg);
+	border-radius: var(--border-radius);
 }
 
 pre {
