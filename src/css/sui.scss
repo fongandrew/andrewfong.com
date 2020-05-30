@@ -1,9 +1,9 @@
 @charset 'utf-8';
 
 @import "_sanitize.scss";
-@import "_contrast.scss";
-@import "_encode.scss";
-@import "_tools.scss";
+@import "utils/_contrast.scss";
+@import "utils/_encode.scss";
+@import "_shading.scss";
 @import "_base.scss";
 @import "_typography.scss";
 @import "_buttons.scss";
