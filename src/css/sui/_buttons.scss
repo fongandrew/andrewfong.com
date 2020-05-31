@@ -48,10 +48,20 @@ button {
     &:focus {
         @include focus-ring();
     }
+
+    + input[type=submit],
+    + input[type=reset],
+    +input[type=button],
+    + button {
+        margin-left: var(--spacing-sm)
+    }
 }
 
-// Primary buttons (type submit)
-input[type=submit], button:not([type]), button[type=submit] {
+// Primary buttons (type submit, unless clearly specified as secondary)
+input[type=submit]:not(.secondary),
+button:not([type]),
+button[type=submit]:not(.secondary),
+button.primary {
     background: ltr-lighten(), var(--button-primary-bg);
     color: var(--button-primary-fg);
     border-color: var(--button-primary-border);

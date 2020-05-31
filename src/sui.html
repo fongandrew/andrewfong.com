@@ -386,16 +386,32 @@
             <fieldset id="forms__action">
               <legend>Action buttons</legend>
               <p>
-                <input type="submit" value="<input type=submit>">
-                <input type="button" value="<input type=button>">
-                <input type="reset" value="<input type=reset>">
-                <input type="submit" value="<input disabled>" disabled>
+                <input type="submit" value="input type=submit">
+                <input type="button" value="input type=button">
+                <input type="reset" value="input type=reset">
+                <input type="submit" value="input disabled" disabled>
               </p>
               <p>
-                <button type="submit">&lt;button type=submit&gt;</button>
-                <button type="button">&lt;button type=button&gt;</button>
-                <button type="reset">&lt;button type=reset&gt;</button>
-                <button type="button" disabled>&lt;button disabled&gt;</button>
+                <button type="submit">button type=submit</button>
+                <button type="button">button type=button</button>
+                <button type="reset">button type=reset</button>
+                <button type="button" disabled>button disabled</button>
+              </p>
+              <p>Closely spaced together inputs + buttons (no space)</p>
+              <p>
+                <input
+                  type="submit"
+                  class="secondary" 
+                  value="input secondary"
+                ><input
+                  type="submit"
+                  class="primary" 
+                  value="input primary"
+                ><button type="submit" class="secondary">
+                  button secondary
+                </button><button type="button" class="primary">
+                  button primary
+                </button>
               </p>
             </fieldset>
             <p><a href="#top">[Top]</a></p>
