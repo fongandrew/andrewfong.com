@@ -15,5 +15,15 @@ If (Test-Path -Path dist) {
     exit 1;
 }
 
+If (Test-Path -Path static) {
+    aws s3 sync static 's3://www.andrewfong.com/static' `
+        --exclude '*.html' --exclude '*.css';
+    aws s3 sync static 's3://www.andrewfong.com/static' `
+        --content-type 'text/css; charset=utf-8' --exclude '*' --include '*.css';
+    aws s3 sync static 's3://www.andrewfong.com/static' `
+        --content-type 'text/html; charset=utf-8' `
+        --exclude '*' --include '*.html';
+}
+
 Pop-Location
 [Environment]::CurrentDirectory = $PWD
