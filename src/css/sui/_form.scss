@@ -22,9 +22,18 @@ textarea {
     display: block;
     font-family: inherit;
     width: 100%;
-    margin-top: var(--spacing-sm);
+    margin-top: var(--spacing-md);
     padding: var(--padding-input-v) var(--padding-input-h);
     height: var(--input-height-md);
+
+    label + & {
+        margin-top: var(--spacing-sm);
+    }
+
+    & + button,
+    & + input {
+        margin-top: var(--spacing-md);
+    }
 
     // Default focus styling
     &:focus {
@@ -90,6 +99,10 @@ select[multiple] {
 
 label {
     display: inline-block;
+
+    & + * {
+        margin-top: var(--spacing-sm);
+    }
 }
 
 fieldset {
@@ -105,6 +118,10 @@ legend {
     display: block;
     font-weight: bold;
     width: 100%;
+
+    & + * {
+        margin-top: var(--spacing-sm);
+    }
 }
 
 textarea {

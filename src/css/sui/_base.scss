@@ -11,10 +11,10 @@ body {
     margin-bottom: 0;
 }
 
-// Lobotomized owl selector = small bit of spacing between elements by
+// Lobotomized owl selector = default spacing between elements by
 // default. Spacing is always a function of the bottom selement.
 * + * {
-	margin-top: var(--spacing-sm);
+	margin-top: var(--spacing-md);
 }
 
 // Annoying Mozilla fix

@@ -38,22 +38,15 @@ h6 {
 	line-height: 1.15;
 	font-weight: 500;
 	margin-bottom: 0;
+	margin-top: 0;
+
+	* + & {
+		margin-top: var(--spacing-md);
+	}
 }
 
 h1 {
 	font-weight: bold;
-}
-
-h1,
-h2,
-h3 {
-  	margin-top: var(--spacing-lg);
-}
-
-h4,
-h5,
-h6 {
-  	margin-top: var(--spacing-md);
 }
 
 small {
@@ -117,6 +110,12 @@ ul,
 ol {
   	padding-left: var(--padding-base);
 	vertical-align: baseline;
+}
+
+// Lobotomized owl exceptions
+* + li,
+li > * {
+	margin-top: var(--spacing-sm);
 }
 
 blockquote {
