@@ -58,7 +58,11 @@ textarea {
 }
 
 textarea {
-    height: auto;
+    height: 7rem;
+
+    &[rows] {
+        height: auto;
+    }
 }
 
 select { 
