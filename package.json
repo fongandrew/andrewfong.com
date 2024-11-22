@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/fongandrew/andrewfong.com#readme",
   "devDependencies": {
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "parcel-bundler": "^1.12.4"
   }
 }
