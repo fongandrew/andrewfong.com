@@ -1,2 +1,2 @@
 # andrewfong.com
-A boring personal site built with Parcel and uploaded to S3
+A boring personal site - just static HTML and CSS
